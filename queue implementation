@@ -1,0 +1,58 @@
+#include <stdio.h>
+# define size 10
+void enqueue(int ele);
+void dequeue();
+void display();
+int q[size],rear=-1,front=-1;
+void main()
+{  int choice,ele;
+   while(1){
+    printf("MENU\n");
+    printf("1.Enqueue\n2.Dequeue\n3.Display\n4.Exit\n");
+    printf("enter your choice\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:printf("enter the element to be inserted\n");
+               scanf("%d",&ele);
+               enqueue(ele);
+               break;
+        case 2:dequeue();
+               break;
+        case 3:display();
+               break;
+        case 4: exit(1);
+        default:printf("invalid choice\n");
+                break;
+    }
+}
+}
+void enqueue(int ele)
+{
+  if(rear==size-1)
+  { printf("queue is full\n");
+  }
+  else
+  { if(front==-1)
+      {front=0;}
+     q[++rear]=ele;
+  }
+}
+void dequeue()
+{
+ if(front==-1)
+ {
+  printf("the queue is empty\n");
+}
+else
+{ printf("the deleted element is %d ",q[front++]);
+}
+}
+void display()
+{printf("the elements are\n");
+ for(int i=front;i<=rear;i++)
+ {
+  printf("%d",q[i]);
+  printf("\n");
+  }
+}
