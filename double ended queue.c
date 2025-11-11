@@ -76,11 +76,12 @@ int mian()
                 break;
             }printf("\n do you want to perform another operation(y/n): ");
             scanf("%c", &ch);
-        } while(ch=='y'||ch=='Y')
-
+        } while(ch=='y'||ch=='Y');
+        break;
         }
-
-        }
+        printf("\n do you want to perform another operation y/n:");
+        scanf("%c",&ch);
+        }while(ch=='y'||ch=='Y');
 }
 void enqueuerear()
 {
@@ -158,6 +159,7 @@ void display()
         }
     }
 }
+
 
 
 
